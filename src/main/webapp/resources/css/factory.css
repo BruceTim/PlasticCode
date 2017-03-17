@@ -1,0 +1,16 @@
+.r_pro{ width:718px; }
+
+.isho{ width:696px; margin:0 auto; overflow:hidden; margin-top:18px;}
+.isho .but{ height:30px; display:block; text-align:left;  line-height:30px; background:url(../img/index_92.gif) repeat-x left bottom;}
+.isho .but .factory{ background:url(../img/bg_not.gif) -251px -189px; float: left ;display: inline;height:30px; margin-right: 5px; text-align:center;font-weight:bold;}
+.isho .but .factory a{ background:url(../img/bg_not.gif) right -189px; padding: 0 10px;margin-left:3px;float: left ;display: inline; }
+.isho .but .factory.cur { background:url(../img/bg_not.gif) -251px -219px;float: left ;display: inline;height:30px; text-align:center;}
+.isho .but .factory.cur a{ background:url(../img/bg_not.gif) right -219px; padding: 0 10px;margin-left:3px;float: left ;display: inline;}
+.isho .con {width:694px; border:#dddddd solid 1px; text-align:left; line-height:16px; border-top:none; padding:5px 0px; }
+.isho .con .le{ width:420px; height:290px; margin-left:8px; margin-top:10px; overflow:hidden;}
+.isho .con .le div.pg{width:410px; display:block; line-height:22px; text-align:left; font-size:12px; }
+.isho .con .le div.pg font{ color:red}
+.isho .con .le .carousel-pictures{margin-left:4px; border:#dcdcdc solid 4px;width:400px; height:250px;display:table-cell;vertical-align:middle;text-align:center;*font-size:225px;*display:block;}
+.isho .con .ri{ width:250px; line-height:18px; margin-right: 5px; margin-top: 5px; }
+.isho .con .ri strong{ display:block; font-family:Verdana, Arial, Helvetica, sans-serif;  font-size:11px;  font-weight:bold;}
+.isho .con .ri font{ font-size: 11px; color: #aaa;}

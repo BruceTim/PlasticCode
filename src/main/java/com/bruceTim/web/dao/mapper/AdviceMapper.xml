@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bruceTim.web.dao.AdviceMapper" >
+  <resultMap id="BaseResultMap" type="Advice" >
+    <id column="category_id" property="categoryId" jdbcType="BIGINT" />
+    <id column="product_id" property="productId" jdbcType="BIGINT" />
+    <result column="position" property="position" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    category_id, product_id, position
+  </sql>
+  <delete id="deleteByCategoryId" parameterType="java.lang.Long">
+    delete from t_advice
+    where category_id = #{categoryId, jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" >
+    insert into t_advice (category_id, product_id, position
+      )
+    values
+    <foreach collection="productIds" item="productId" index="index" separator=",">
+      (#{categoryId,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{index,jdbcType=INTEGER}
+      )
+    </foreach>
+
+  </insert>
+</mapper>

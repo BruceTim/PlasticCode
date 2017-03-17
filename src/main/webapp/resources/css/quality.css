@@ -1,0 +1,15 @@
+*{ padding: 0; margin: 0;}
+.r_pro{ width:718px; }
+
+.r_pro .qc{ width: 687px; overflow: hidden;  text-align: left; margin: 0 auto;margin-top: 10px; }
+.r_pro .qc strong{  font-size: 13px;font-family:"Trebuchet MS", Helvetica, Arial, sans-serif; display: block; height: 25px; line-height: 25px; }
+.r_pro .qc .con{ width: 685px; line-height: 16px; *width: 687px; padding-bottom: 10px;}
+.r_pro .qc .con b{ display: block; margin-top: 10px; text-align: left;}
+.qc ul,.qc ol{margin-left: 25px;}
+
+.r_pro .ctf{ width: 696px; text-align: left;  margin:  0 auto;margin-top: 8px; }
+.r_pro .ctf strong{ width: 696px; text-indent: 10px;font-family:"Trebuchet MS", Helvetica, Arial, sans-serif; font-size: 13px; display: block; height: 25px; line-height: 25px; background: #E3ECF4;}
+.ctf div{ width: 330px; text-align: left;line-height: 22px; margin-top: 15px;}
+.ctf div img{ float: left; display: inline; border: #dcdcdc solid 1px; margin-right: 10px;}
+.ctf div b{ margin-right: 10px; }
+

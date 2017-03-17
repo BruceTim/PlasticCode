@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bruceTim.web.dao.CategoryMapper" >
+  <resultMap id="BaseResultMap" type="Category" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, category_name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_category
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_category
+    order by id
+  </select>
+  <select id="selectSelective" resultMap="BaseResultMap" parameterType="Category" >
+    select
+    <include refid="Base_Column_List" />
+    from t_category
+    where
+    <if test="categoryName != null and categoryName != ''" >
+      category_name = #{categoryName,jdbcType=VARCHAR}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_category
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Category" >
+    insert into t_category (id, category_name)
+    values (#{id,jdbcType=BIGINT}, #{categoryName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="Category" >
+    insert into t_category
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="categoryName != null and categoryName != ''" >
+        category_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="categoryName != null and categoryName != ''" >
+        #{categoryName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Category" >
+    update t_category
+    <set >
+      <if test="categoryName != null and categoryName != ''" >
+        category_name = #{categoryName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Category" >
+    update t_category
+    set category_name = #{categoryName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

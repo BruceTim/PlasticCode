@@ -1,0 +1,60 @@
+
+
+.guide h1 {font-weight: bold;}
+.index-bread{ font-size: 12px;text-indent: 5px;color: #003366;}
+h1.index-top-tip1{ font-size: 14px; font-family: "tohoma","arial"; font-weight:bold; text-align: left;color: #555;  line-height: 18px;}
+h1.index-top-tip3{ line-height: 24px;padding: 6px 10px 0 6px;}
+h1.index-top-tip2{ border-bottom:1px dotted #e4e4e4; padding-bottom: 6px;}
+h1.index-top-tip{ font-size: 20px; font-family: "tohoma","arial"; font-weight:bold; text-align: left;color: #003366; line-height: 24px;}
+.r_pro .tit b{text-indent:0}
+
+h1.cate-product-title{margin-left: 5px; float: left; display: inline; font-size: 16px;color: #333;}
+h2.cate-bread{ font-size: 13px;  color: #003366;text-indent: 5px;}
+h2.tag-words{ display: inline-block;}
+h2.tag-words a{ font-size: 14px; font-weight:normal; }
+h2.list-main-title{ display: inline-block;}
+h2.list-main-title a{ font-size: 12px;}
+h1.contact-company-name{font-family: Verdana, Arial, Helvetica, sans-serif;   font-size: 13px; float: left; display: inline;}
+h1.company-name{ font-size: 18px;}
+/*
+.left-cate,.hot-pro h2.hot-pro-wrap{ width: 200px;line-height: 20px;padding: 5px 0 5px 10px; background: url(../img/bg_not.gif) no-repeat -494px -117px; overflow: hidden; text-align: left; border-bottom: #F0F4F6 solid 1px; font-size: 12px;}
+.left-cate h2.cate-name-wrap,.hot-pro h2.hot-pro-wrap{ display: inline-block; font-size: 12px;}
+
+.hot-pro h2.hot-pro-wrap{ width:195px; padding: 5px 5px 5px 10px;font-size: 13px; line-height: 16px; background: url(../img/bg_not.gif) no-repeat -494px -117px;}
+.hot-pro h2.hot-pro-wrap a{ font-size: 13px}
+
+#.index-bread{ font-size: 12px;}
+
+h1.index-top-tip{ font-size: 20px; font-family: "tohoma","arial"; font-weight:bold; text-align: left;color: #333; padding: 12px 10px 10px 15px; line-height: 30px;}
+
+#h1.index-top-tip1{ font-size: 14px; font-family: "tohoma","arial"; font-weight:bold; text-align: left;color: #555; padding: 12px 10px 0px 15px; line-height: 18px;}
+
+h1.index-top-tip3{ line-height: 24px;padding: 6px 10px 0 6px;}
+h1.index-top-tip2{ border-bottom:1px dotted #e4e4e4; padding-bottom: 6px;}
+h2.cate-bread{ font-size: 13px;}
+
+.r_pro .sog b{ font-size: 14px;}
+#h1.cate-product-title{margin-left: 5px; padding-left: 12px; background: url(../img/bg_not.gif) no-repeat -494px -273px; float: left; display: inline; font-size: 18px;}
+
+h1.detail-product-title{ font-size: 22px; line-height: 28px; font-weight: normal; padding: 10px; color: #333;}
+
+.key b{ font-size: 14px}
+
+
+#h2.tag-words{ display: inline-block;}
+#h2.tag-words a{ font-size: 14px; font-weight:normal; }
+
+.r_pro .sog .list-main-wrap{margin-left: 5px;padding-left: 12px; background: url(../img/bg_not.gif) no-repeat -494px -273px;}
+h2.list-main-title{ display: inline-block;}
+h2.list-main-title a{ font-size: 13px;}
+
+h1.product-r-top{ text-align: left; font-size: 14px; font-weight: normal; padding: 15px 0 5px 10px; color:#333;}
+h1.company-name{ font-size: 18px;}
+
+#h1.contact-company-name{font-family: Verdana, Arial, Helvetica, sans-serif; margin-left: 5px; padding-left: 12px; background: url(../img/index_08.gif) no-repeat left center; font-size: 13px; float: left; display: inline;}
+.r_pro .sog .sear, .r_pronew .sog .sear{ width: auto; padding-right:10px;}
+
+
+*/
+
+.l_menu h2 a{font-size: 13px;}

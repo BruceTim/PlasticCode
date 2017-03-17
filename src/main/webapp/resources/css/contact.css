@@ -1,0 +1,58 @@
+*{ padding: 0; margin: 0;}
+.r_pro{ width:718px; }
+
+.r_pro .con{ width: 687px; overflow: hidden;  text-align: left; margin: 0 auto;margin-top: 10px; line-height: 17px; margin-top: 10px; border-bottom: #dcdcdc solid 1px; padding-bottom: 10px; }
+.r_pro .con strong{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 11px; }
+.r_pro .con_list{ color: #333; float: left; display: inline; margin-left: 20px;background: url(../img/aas.gif) no-repeat left 7px; padding-left: 10px; width: 677px; overflow: hidden;  text-align: left; margin: 0 auto;margin-left: 18px; line-height: 17px; margin-top: 10px;  padding-bottom: 2px; }
+.r_pro .con_list strong{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size: 11px;  }
+
+
+.company_mainintro{
+	border-collapse: collapse;  
+        color: #000;
+	background:#F2F4F6;
+        width: 100%;
+        font-size: 11px;
+	}
+
+.company_mainintro td,.company_mainintro th{
+
+  border: 1px solid #fff;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+        padding: 5px;
+	font-weight:normal;
+        line-height: 17px;
+}
+
+.company_subintro{
+    	border-collapse: collapse;
+        color: #000;
+        width: 100%;
+        font-size: 11px;
+}
+
+.company_subintro td,.company_subintro th{
+  border: 1px solid #fff;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+        padding: 3px;
+	font-weight:normal;
+        line-height: 14px;
+}
+
+.company_mainintro th,.company_subintro th{
+     font-weight: bold;
+     color: #555555;
+    
+     
+}
+
+.company_subintro th{
+     padding-top: 4px;
+}
+
+.ri b{font-size:13px; height:30px; line-height:30px; text-align:left; display:block; }
+.ri textarea{ color:#777777; width:550px; height:155px; padding: 5px; font-size: 12px; font-family:Arial, Helvetica, sans-serif; }
+.ri span{font-size:10px; color:#555555; text-align:right; width:555px; display:block; height:14px;}
+.ri p{ height:25px; text-align:left;  display:block;}
+.ri p a{height:24px; font-size:13px;  float:left; display:inline;   line-height:24px; font-weight:bold; text-align:center; padding:0 13px;border-left:#B5B5B5 solid 1px; border-right:#535353 solid 1px; }
+.ri p a img{ margin-right: 5px; margin-top: 7px;}

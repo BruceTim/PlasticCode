@@ -1,0 +1,16 @@
+.r_pro {
+	WIDTH: 718px
+}
+.r_fac {
+	WIDTH: 718px
+}
+.r_pro dl{ width: 160px;margin: 5px 0px 5px 16px; overflow: hidden;float: left; display: inline;}
+
+.r_pro dl dd { width: 100%; height:auto; clear: both; float: left; display: inline; margin-top: 3px; color: #555;}
+.r_pro dl dd div h2{ margin:3px 0; overflow: hidden;font-family: Arial, sans-serif;font-size: 12px; text-align:center; }
+
+.r_pro .r_procon{ background:url(../img/index_46.gif); width:706px; padding: 5px; border:#fff solid 1px;}
+
+.r_pro dl dt{ margin-left: 7px; float: left; display: inline; overflow: hidden;  width: 140px;height: 100px; padding:2px; border:#dcdcdc solid 1px; text-align: center;}
+.r_pro dl dt a{ width:140px; height:100px; display:table-cell;vertical-align:middle;text-align:center;*font-size:94px;*display:block}
+.r_pro dl dt img{vertical-align:middle;}

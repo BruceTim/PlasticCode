@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bruceTim.web.dao.EmailMapper" >
+  <resultMap id="BaseResultMap" type="Email" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="sender" property="sender" jdbcType="VARCHAR" />
+    <result column="subject" property="subject" jdbcType="VARCHAR" />
+    <result column="transfer" property="transfer" jdbcType="VARCHAR" />
+    <result column="receiver" property="receiver" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="sender_name" property="senderName" jdbcType="VARCHAR" />
+    <result column="sender_company" property="senderCompany" jdbcType="VARCHAR" />
+    <result column="sender_phone" property="senderPhone" jdbcType="VARCHAR" />
+    <result column="sender_fax" property="senderFax" jdbcType="VARCHAR" />
+    <result column="website" property="website" jdbcType="VARCHAR" />
+    <result column="sender_country" property="senderCountry" jdbcType="VARCHAR" />
+    <result column="price_terms" property="priceTerms" jdbcType="VARCHAR" />
+    <result column="payment" property="payment" jdbcType="VARCHAR" />
+    <result column="initial_order" property="initialOrder" jdbcType="VARCHAR" />
+    <result column="sample_terms" property="sampleTerms" jdbcType="VARCHAR" />
+    <result column="specification" property="specification" jdbcType="BIT" />
+    <result column="company_description" property="companyDescription" jdbcType="BIT" />
+    <result column="deliver_time" property="deliverTime" jdbcType="BIT" />
+    <result column="file1" property="file1" jdbcType="VARCHAR" />
+    <result column="file2" property="file2" jdbcType="VARCHAR" />
+    <result column="file3" property="file3" jdbcType="VARCHAR" />
+    <result column="urgent" property="urgent" jdbcType="BIT" />
+    <result column="subscribed" property="subscribed" jdbcType="BIT" />
+    <result column="state" property="state" typeHandler="com.bruceTim.core.generic.GenericEnumHandler" />
+    <result column="other" property="other" jdbcType="VARCHAR" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sender, subject, transfer, receiver, create_time, sender_name, sender_company, 
+    sender_phone, sender_fax, website, sender_country, price_terms, payment, initial_order, 
+    sample_terms, specification, company_description, deliver_time, file1, file2, file3, 
+    urgent, subscribed, state, other, content
+  </sql>
+  <sql id="Page_Column_List">
+    id, sender, subject, create_time, state, urgent
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_email
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByPrimaryKeySelective" resultMap="BaseResultMap" parameterType="Email" >
+    select
+    <include refid="Base_Column_List" />
+    from t_email
+    where id = #{id,jdbcType=BIGINT}
+    <if test="sender != null" >
+      and sender = #{sender,jdbcType=VARCHAR}
+    </if>
+    <if test="subject != null" >
+      and subject = #{subject,jdbcType=VARCHAR}
+    </if>
+    <if test="transfer != null" >
+      and transfer = #{transfer,jdbcType=VARCHAR}
+    </if>
+    <if test="receiver != null" >
+      and receiver = #{receiver,jdbcType=VARCHAR}
+    </if>
+    <if test="createTime != null" >
+      and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="senderName != null" >
+      and sender_name = #{senderName,jdbcType=VARCHAR}
+    </if>
+    <if test="senderCompany != null" >
+      and sender_company = #{senderCompany,jdbcType=VARCHAR}
+    </if>
+    <if test="senderPhone != null" >
+      and sender_phone = #{senderPhone,jdbcType=VARCHAR}
+    </if>
+    <if test="senderFax != null" >
+      and sender_fax = #{senderFax,jdbcType=VARCHAR}
+    </if>
+    <if test="website != null" >
+      and website = #{website,jdbcType=VARCHAR}
+    </if>
+    <if test="senderCountry != null" >
+      and sender_country = #{senderCountry,jdbcType=VARCHAR}
+    </if>
+    <if test="priceTerms != null" >
+      and price_terms = #{priceTerms,jdbcType=VARCHAR}
+    </if>
+    <if test="payment != null" >
+      and payment = #{payment,jdbcType=VARCHAR}
+    </if>
+    <if test="initialOrder != null" >
+      and initial_order = #{initialOrder,jdbcType=VARCHAR}
+    </if>
+    <if test="sampleTerms != null" >
+      and sample_terms = #{sampleTerms,jdbcType=VARCHAR}
+    </if>
+    <if test="specification != null" >
+      and specification = #{specification,jdbcType=BIT}
+    </if>
+    <if test="companyDescription != null" >
+      and company_description = #{companyDescription,jdbcType=BIT}
+    </if>
+    <if test="deliverTime != null" >
+      and deliver_time = #{deliverTime,jdbcType=BIT}
+    </if>
+    <if test="file1 != null" >
+      and file1 = #{file1,jdbcType=VARCHAR}
+    </if>
+    <if test="file2 != null" >
+      and file2 = #{file2,jdbcType=VARCHAR}
+    </if>
+    <if test="file3 != null" >
+      and file3 = #{file3,jdbcType=VARCHAR}
+    </if>
+    <if test="urgent != null" >
+      and urgent = #{urgent,jdbcType=BIT}
+    </if>
+    <if test="subscribed != null" >
+      and subscribed = #{subscribed,jdbcType=BIT}
+    </if>
+    <if test="state != null" >
+      and state = #{state,typeHandler=com.bruceTim.core.generic.GenericEnumHandler}
+    </if>
+    <if test="other != null" >
+      and other = #{other,jdbcType=VARCHAR}
+    </if>
+    <if test="content != null" >
+      and content = #{content,jdbcType=LONGVARCHAR}
+    </if>
+  </select>
+  <select id="selectByStateForPage" resultMap="BaseResultMap" parameterType="Integer" >
+    select
+    <include refid="Page_Column_List" />
+    from t_email
+    where state = #{state,jdbcType=INTEGER}
+  </select>
+  <select id="selectAllForPage" resultMap="BaseResultMap">
+    select
+    <include refid="Page_Column_List" />
+    from t_email
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_email
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Email" >
+    insert into t_email (id, sender, subject, 
+      transfer, receiver, create_time, 
+      sender_name, sender_company, sender_phone, 
+      sender_fax, website, sender_country, 
+      price_terms, payment, initial_order, 
+      sample_terms, specification, company_description, 
+      deliver_time, file1, file2, 
+      file3, urgent, subscribed,
+      state, other, content
+      )
+    values (#{id,jdbcType=BIGINT}, #{sender,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, 
+      #{transfer,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{senderName,jdbcType=VARCHAR}, #{senderCompany,jdbcType=VARCHAR}, #{senderPhone,jdbcType=VARCHAR}, 
+      #{senderFax,jdbcType=VARCHAR}, #{website,jdbcType=VARCHAR}, #{senderCountry,jdbcType=VARCHAR}, 
+      #{priceTerms,jdbcType=VARCHAR}, #{payment,jdbcType=VARCHAR}, #{initialOrder,jdbcType=VARCHAR}, 
+      #{sampleTerms,jdbcType=VARCHAR}, #{specification,jdbcType=BIT}, #{companyDescription,jdbcType=BIT}, 
+      #{deliverTime,jdbcType=BIT}, #{file1,jdbcType=VARCHAR}, #{file2,jdbcType=VARCHAR}, 
+      #{file3,jdbcType=VARCHAR}, #{urgent,jdbcType=BIT}, #{subscribed,jdbcType=BIT},
+      #{state,typeHandler=com.bruceTim.core.generic.GenericEnumHandler}, #{other,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="Email" >
+    insert into t_email
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sender != null" >
+        sender,
+      </if>
+      <if test="subject != null" >
+        subject,
+      </if>
+      <if test="transfer != null" >
+        transfer,
+      </if>
+      <if test="receiver != null" >
+        receiver,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="senderName != null" >
+        sender_name,
+      </if>
+      <if test="senderCompany != null" >
+        sender_company,
+      </if>
+      <if test="senderPhone != null" >
+        sender_phone,
+      </if>
+      <if test="senderFax != null" >
+        sender_fax,
+      </if>
+      <if test="website != null" >
+        website,
+      </if>
+      <if test="senderCountry != null" >
+        sender_country,
+      </if>
+      <if test="priceTerms != null" >
+        price_terms,
+      </if>
+      <if test="payment != null" >
+        payment,
+      </if>
+      <if test="initialOrder != null" >
+        initial_order,
+      </if>
+      <if test="sampleTerms != null" >
+        sample_terms,
+      </if>
+      <if test="specification != null" >
+        specification,
+      </if>
+      <if test="companyDescription != null" >
+        company_description,
+      </if>
+      <if test="deliverTime != null" >
+        deliver_time,
+      </if>
+      <if test="file1 != null" >
+        file1,
+      </if>
+      <if test="file2 != null" >
+        file2,
+      </if>
+      <if test="file3 != null" >
+        file3,
+      </if>
+      <if test="urgent != null" >
+        urgent,
+      </if>
+      <if test="subscribed != null" >
+        subscribed,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="other != null" >
+        other,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null" >
+        #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="transfer != null" >
+        #{transfer,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null" >
+        #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="senderName != null" >
+        #{senderName,jdbcType=VARCHAR},
+      </if>
+      <if test="senderCompany != null" >
+        #{senderCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="senderPhone != null" >
+        #{senderPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="senderFax != null" >
+        #{senderFax,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="senderCountry != null" >
+        #{senderCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="priceTerms != null" >
+        #{priceTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="payment != null" >
+        #{payment,jdbcType=VARCHAR},
+      </if>
+      <if test="initialOrder != null" >
+        #{initialOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleTerms != null" >
+        #{sampleTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null" >
+        #{specification,jdbcType=BIT},
+      </if>
+      <if test="companyDescription != null" >
+        #{companyDescription,jdbcType=BIT},
+      </if>
+      <if test="deliverTime != null" >
+        #{deliverTime,jdbcType=BIT},
+      </if>
+      <if test="file1 != null" >
+        #{file1,jdbcType=VARCHAR},
+      </if>
+      <if test="file2 != null" >
+        #{file2,jdbcType=VARCHAR},
+      </if>
+      <if test="file3 != null" >
+        #{file3,jdbcType=VARCHAR},
+      </if>
+      <if test="urgent != null" >
+        #{urgent,jdbcType=BIT},
+      </if>
+      <if test="subscribed != null" >
+        #{subscribed,jdbcType=BIT},
+      </if>
+      <if test="state != null" >
+        #{state,typeHandler=com.bruceTim.core.generic.GenericEnumHandler},
+      </if>
+      <if test="other != null" >
+        #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateAll" parameterType="java.lang.Integer">
+    update t_email
+    <choose>
+      <when test="state == 2">
+          set state = #{state, jdbcType=INTEGER}
+          where state = 1
+      </when>
+      <otherwise>
+        set state = #{state, jdbcType=INTEGER}
+        where state &lt;=2
+      </otherwise>
+    </choose>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="Email" >
+    update t_email
+    <set >
+      <if test="sender != null" >
+        sender = #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="transfer != null" >
+        transfer = #{transfer,jdbcType=VARCHAR},
+      </if>
+      <if test="receiver != null" >
+        receiver = #{receiver,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="senderName != null" >
+        sender_name = #{senderName,jdbcType=VARCHAR},
+      </if>
+      <if test="senderCompany != null" >
+        sender_company = #{senderCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="senderPhone != null" >
+        sender_phone = #{senderPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="senderFax != null" >
+        sender_fax = #{senderFax,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null" >
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="senderCountry != null" >
+        sender_country = #{senderCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="priceTerms != null" >
+        price_terms = #{priceTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="payment != null" >
+        payment = #{payment,jdbcType=VARCHAR},
+      </if>
+      <if test="initialOrder != null" >
+        initial_order = #{initialOrder,jdbcType=VARCHAR},
+      </if>
+      <if test="sampleTerms != null" >
+        sample_terms = #{sampleTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="specification != null" >
+        specification = #{specification,jdbcType=BIT},
+      </if>
+      <if test="companyDescription != null" >
+        company_description = #{companyDescription,jdbcType=BIT},
+      </if>
+      <if test="deliverTime != null" >
+        deliver_time = #{deliverTime,jdbcType=BIT},
+      </if>
+      <if test="file1 != null" >
+        file1 = #{file1,jdbcType=VARCHAR},
+      </if>
+      <if test="file2 != null" >
+        file2 = #{file2,jdbcType=VARCHAR},
+      </if>
+      <if test="file3 != null" >
+        file3 = #{file3,jdbcType=VARCHAR},
+      </if>
+      <if test="urgent != null" >
+        urgent = #{urgent,jdbcType=BIT},
+      </if>
+      <if test="subscribed != null" >
+        subscribed = #{subscribed,jdbcType=BIT},
+      </if>
+      <if test="state != null" >
+        state = #{state,typeHandler=com.bruceTim.core.generic.GenericEnumHandler},
+      </if>
+      <if test="other != null" >
+        other = #{other,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Email" >
+    update t_email
+    set sender = #{sender,jdbcType=VARCHAR},
+      subject = #{subject,jdbcType=VARCHAR},
+      transfer = #{transfer,jdbcType=VARCHAR},
+      receiver = #{receiver,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      sender_name = #{senderName,jdbcType=VARCHAR},
+      sender_company = #{senderCompany,jdbcType=VARCHAR},
+      sender_phone = #{senderPhone,jdbcType=VARCHAR},
+      sender_fax = #{senderFax,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR},
+      sender_country = #{senderCountry,jdbcType=VARCHAR},
+      price_terms = #{priceTerms,jdbcType=VARCHAR},
+      payment = #{payment,jdbcType=VARCHAR},
+      initial_order = #{initialOrder,jdbcType=VARCHAR},
+      sample_terms = #{sampleTerms,jdbcType=VARCHAR},
+      specification = #{specification,jdbcType=BIT},
+      company_description = #{companyDescription,jdbcType=BIT},
+      deliver_time = #{deliverTime,jdbcType=BIT},
+      file1 = #{file1,jdbcType=VARCHAR},
+      file2 = #{file2,jdbcType=VARCHAR},
+      file3 = #{file3,jdbcType=VARCHAR},
+      urgent = #{urgent,jdbcType=BIT},
+      subscribed = #{subscribed,jdbcType=BIT},
+      state = #{state,typeHandler=com.bruceTim.core.generic.GenericEnumHandler},
+      other = #{other,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

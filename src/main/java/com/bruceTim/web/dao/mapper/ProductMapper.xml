@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bruceTim.web.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="Product" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="tag1" property="tag1" jdbcType="VARCHAR" />
+    <result column="tag2" property="tag2" jdbcType="VARCHAR" />
+    <result column="tag3" property="tag3" jdbcType="VARCHAR" />
+    <result column="brand_name" property="brandName" jdbcType="VARCHAR" />
+    <result column="model_number" property="modelNumber" jdbcType="VARCHAR" />
+    <result column="certification" property="certification" jdbcType="VARCHAR" />
+    <result column="place_of_origin" property="placeOfOrigin" jdbcType="VARCHAR" />
+    <result column="min_order_qty" property="minOrderQty" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="VARCHAR" />
+    <result column="payment_terms" property="paymentTerms" jdbcType="VARCHAR" />
+    <result column="supply_ability" property="supplyAbility" jdbcType="VARCHAR" />
+    <result column="delivery_time" property="deliveryTime" jdbcType="VARCHAR" />
+    <result column="packaging_details" property="packagingDetails" jdbcType="VARCHAR" />
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="custom_properties" property="customProperties" jdbcType="LONGVARCHAR" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+    <result column="pictures" property="pictures" jdbcType="LONGVARCHAR" />
+    <association property="category" javaType="Category">
+      <id property="id" column="category_id" jdbcType="BIGINT" />
+      <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    p.id, p.category_id, p.tag1, p.tag2, p.tag3, p.brand_name, p.model_number, p.certification, p.place_of_origin,
+    p.min_order_qty, p.price, p.payment_terms, p.supply_ability, p.delivery_time, p.packaging_details,
+    p.product_name, p.create_time, p.custom_properties, p.content, p.description, p.pictures, ca.category_name
+  </sql>
+  <sql id="Advice_Column_List" >
+    p.id, p.product_name, p.pictures
+  </sql>
+  <sql id="Page_Column_List" >
+    p.id, p.product_name, p.create_time, p.content, p.pictures
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where p.id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByCategoryIdAndNameForPage" resultMap="BaseResultMap" parameterType="Product">
+    select
+    <include refid="Page_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where 1 = 1
+    <if test="categoryId !=0 " >
+      and p.category_id = #{categoryId,jdbcType=BIGINT}
+    </if>
+    <if test="name != null and name != ''">
+      and p.product_name LIKE CONCAT('%', #{name}, '%')
+    </if>
+  </select>
+
+  <select id="selectSelectiveByPage" resultMap="BaseResultMap" >
+    select
+    <include refid="Page_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where 1 = 1
+    <if test="category.id != null and category.id != 0" >
+      and p.category_id = #{category.id,jdbcType=BIGINT}
+    </if>
+    <if test="tag1 != null" >
+      and p.tag1 = #{tag1,jdbcType=VARCHAR}
+    </if>
+    <if test="tag2 != null" >
+      and tag2 = #{tag2,jdbcType=VARCHAR}
+    </if>
+    <if test="tag3 != null" >
+      and tag3 = #{tag3,jdbcType=VARCHAR}
+    </if>
+    <if test="brandName != null" >
+      and brand_name = #{brandName,jdbcType=VARCHAR}
+    </if>
+    <if test="modelNumber != null" >
+      and model_number = #{modelNumber,jdbcType=VARCHAR}
+    </if>
+    <if test="certification != null" >
+      and certification = #{certification,jdbcType=VARCHAR}
+    </if>
+    <if test="placeOfOrigin != null" >
+      and place_of_origin = #{placeOfOrigin,jdbcType=VARCHAR}
+    </if>
+    <if test="minOrderQty != null" >
+      and min_order_qty = #{minOrderQty,jdbcType=VARCHAR}
+    </if>
+    <if test="price != null" >
+      and price = #{price,jdbcType=VARCHAR}
+    </if>
+    <if test="paymentTerms != null" >
+      and payment_terms = #{paymentTerms,jdbcType=VARCHAR}
+    </if>
+    <if test="supplyAbility != null" >
+      and supply_ability = #{supplyAbility,jdbcType=VARCHAR}
+    </if>
+    <if test="deliveryTime != null" >
+      and delivery_time = #{deliveryTime,jdbcType=VARCHAR}
+    </if>
+    <if test="packagingDetails != null" >
+      packaging_details = #{packagingDetails,jdbcType=VARCHAR}
+    </if>
+    <if test="productName != null" >
+      and product_name = #{productName,jdbcType=VARCHAR}
+    </if>
+    <if test="createTime != null" >
+      and and create_time = #{createTime,jdbcType=TIMESTAMP}
+    </if>
+    <if test="customProperties != null" >
+      and custom_properties = #{customProperties,jdbcType=LONGVARCHAR}
+    </if>
+    <if test="content != null" >
+      and content = #{content,jdbcType=LONGVARCHAR}
+    </if>
+    <if test="description != null" >
+      and description = #{description,jdbcType=LONGVARCHAR}
+    </if>
+    <if test="pictures != null" >
+      and pictures = #{pictures,jdbcType=LONGVARCHAR}
+    </if>
+  </select>
+  <select id="selectByTagForPage" resultMap="BaseResultMap" >
+    select
+    <include refid="Page_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where p.tag1 = #{tag,jdbcType=BIGINT}
+    UNION
+    select
+    <include refid="Page_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where p.tag2 = #{tag,jdbcType=BIGINT}
+    UNION
+    select
+    <include refid="Page_Column_List" />
+    from t_product p
+    LEFT JOIN t_category ca
+    ON p.category_id = ca.id
+    where p.tag3 = #{tag,jdbcType=BIGINT}
+  </select>
+  <select id="selectAmountByCategoryId" resultType="java.lang.Integer" parameterType="java.lang.Long" >
+    select count(*)
+    from t_product
+    where category_id = #{categoryId, jdbcType=BIGINT}
+  </select>
+  <select id="selectAdviceByCategoryId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Advice_Column_List" />
+    from t_advice a
+    LEFT JOIN t_product p
+    ON p.id = a.product_id
+    LEFT JOIN t_category ca
+    ON ca.id = p.category_id
+    where a.category_id = #{categoryId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteAdviceByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_advice
+    where product_id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_product
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="Product">
+    insert into t_product (category_id, tag1,
+      tag2, tag3, brand_name, 
+      model_number, certification, place_of_origin, 
+      min_order_qty, price, payment_terms, 
+      supply_ability, delivery_time, packaging_details, 
+      product_name, create_time, custom_properties, 
+      content, description, pictures
+      )
+    values (#{tag1,jdbcType=VARCHAR},
+      #{tag2,jdbcType=VARCHAR}, #{tag3,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR}, 
+      #{modelNumber,jdbcType=VARCHAR}, #{certification,jdbcType=VARCHAR}, #{placeOfOrigin,jdbcType=VARCHAR}, 
+      #{minOrderQty,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, #{paymentTerms,jdbcType=VARCHAR}, 
+      #{supplyAbility,jdbcType=VARCHAR}, #{deliveryTime,jdbcType=VARCHAR}, #{packagingDetails,jdbcType=VARCHAR}, 
+      #{productName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{customProperties,jdbcType=LONGVARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR}, #{pictures,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertAndGetId" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
+    insert into t_product (category_id, tag1,
+    tag2, tag3, brand_name,
+    model_number, certification, place_of_origin,
+    min_order_qty, price, payment_terms,
+    supply_ability, delivery_time, packaging_details,
+    product_name, create_time, custom_properties,
+    content, description, pictures
+    )
+    values (#{category.id,jdbcType=VARCHAR},#{tag1,jdbcType=VARCHAR},
+    #{tag2,jdbcType=VARCHAR}, #{tag3,jdbcType=VARCHAR}, #{brandName,jdbcType=VARCHAR},
+    #{modelNumber,jdbcType=VARCHAR}, #{certification,jdbcType=VARCHAR}, #{placeOfOrigin,jdbcType=VARCHAR},
+    #{minOrderQty,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, #{paymentTerms,jdbcType=VARCHAR},
+    #{supplyAbility,jdbcType=VARCHAR}, #{deliveryTime,jdbcType=VARCHAR}, #{packagingDetails,jdbcType=VARCHAR},
+    #{productName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{customProperties,jdbcType=LONGVARCHAR},
+    #{content,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR}, #{pictures,jdbcType=LONGVARCHAR}
+    )
+  </insert>
+  <insert id="insertSelective" parameterType="Product" >
+    insert into t_product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="category.id != null and category.id != 0" >
+        category_id,
+      </if>
+      <if test="tag1 != null" >
+        tag1,
+      </if>
+      <if test="tag2 != null" >
+        tag2,
+      </if>
+      <if test="tag3 != null" >
+        tag3,
+      </if>
+      <if test="brandName != null" >
+        brand_name,
+      </if>
+      <if test="modelNumber != null" >
+        model_number,
+      </if>
+      <if test="certification != null" >
+        certification,
+      </if>
+      <if test="placeOfOrigin != null" >
+        place_of_origin,
+      </if>
+      <if test="minOrderQty != null" >
+        min_order_qty,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="paymentTerms != null" >
+        payment_terms,
+      </if>
+      <if test="supplyAbility != null" >
+        supply_ability,
+      </if>
+      <if test="deliveryTime != null" >
+        delivery_time,
+      </if>
+      <if test="packagingDetails != null" >
+        packaging_details,
+      </if>
+      <if test="productName != null" >
+        product_name,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="customProperties != null" >
+        custom_properties,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="pictures != null" >
+        pictures,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="category.id != null and category.id != 0" >
+        #{category.id,jdbcType=BIGINT},
+      </if>
+      <if test="tag1 != null" >
+        #{tag1,jdbcType=VARCHAR},
+      </if>
+      <if test="tag2 != null" >
+        #{tag2,jdbcType=VARCHAR},
+      </if>
+      <if test="tag3 != null" >
+        #{tag3,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelNumber != null" >
+        #{modelNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certification != null" >
+        #{certification,jdbcType=VARCHAR},
+      </if>
+      <if test="placeOfOrigin != null" >
+        #{placeOfOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="minOrderQty != null" >
+        #{minOrderQty,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentTerms != null" >
+        #{paymentTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="supplyAbility != null" >
+        #{supplyAbility,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryTime != null" >
+        #{deliveryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="packagingDetails != null" >
+        #{packagingDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customProperties != null" >
+        #{customProperties,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pictures != null" >
+        #{pictures,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="Product" >
+    update t_product
+    <set >
+      <if test="category.id != null and category.id != 0" >
+        category_id = #{category.id,jdbcType=BIGINT},
+      </if>
+      <if test="tag1 != null" >
+        tag1 = #{tag1,jdbcType=VARCHAR},
+      </if>
+      <if test="tag2 != null" >
+        tag2 = #{tag2,jdbcType=VARCHAR},
+      </if>
+      <if test="tag3 != null" >
+        tag3 = #{tag3,jdbcType=VARCHAR},
+      </if>
+      <if test="brandName != null" >
+        brand_name = #{brandName,jdbcType=VARCHAR},
+      </if>
+      <if test="modelNumber != null" >
+        model_number = #{modelNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="certification != null" >
+        certification = #{certification,jdbcType=VARCHAR},
+      </if>
+      <if test="placeOfOrigin != null" >
+        place_of_origin = #{placeOfOrigin,jdbcType=VARCHAR},
+      </if>
+      <if test="minOrderQty != null" >
+        min_order_qty = #{minOrderQty,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentTerms != null" >
+        payment_terms = #{paymentTerms,jdbcType=VARCHAR},
+      </if>
+      <if test="supplyAbility != null" >
+        supply_ability = #{supplyAbility,jdbcType=VARCHAR},
+      </if>
+      <if test="deliveryTime != null" >
+        delivery_time = #{deliveryTime,jdbcType=VARCHAR},
+      </if>
+      <if test="packagingDetails != null" >
+        packaging_details = #{packagingDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="productName != null" >
+        product_name = #{productName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customProperties != null" >
+        custom_properties = #{customProperties,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="content != null and content !=''" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="description != null and description !=''" >
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="pictures != null" >
+        pictures = #{pictures,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="Product" >
+    update t_product
+    set category_id = #{category.id,jdbcType=BIGINT},
+      tag1 = #{tag1,jdbcType=VARCHAR},
+      tag2 = #{tag2,jdbcType=VARCHAR},
+      tag3 = #{tag3,jdbcType=VARCHAR},
+      brand_name = #{brandName,jdbcType=VARCHAR},
+      model_number = #{modelNumber,jdbcType=VARCHAR},
+      certification = #{certification,jdbcType=VARCHAR},
+      place_of_origin = #{placeOfOrigin,jdbcType=VARCHAR},
+      min_order_qty = #{minOrderQty,jdbcType=VARCHAR},
+      price = #{price,jdbcType=VARCHAR},
+      payment_terms = #{paymentTerms,jdbcType=VARCHAR},
+      supply_ability = #{supplyAbility,jdbcType=VARCHAR},
+      delivery_time = #{deliveryTime,jdbcType=VARCHAR},
+      packaging_details = #{packagingDetails,jdbcType=VARCHAR},
+      product_name = #{productName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      custom_properties = #{customProperties,jdbcType=LONGVARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR},
+      description = #{description,jdbcType=LONGVARCHAR},
+      pictures = #{pictures,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

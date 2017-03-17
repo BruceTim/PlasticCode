@@ -1,0 +1,5 @@
+.f-header,.f-content,.f-footer,.f-breadcrumbs{margin: 0 auto; width: 950px;}
+.f-header{ }
+.f-sidebar{ width: 205px; background: url(../../img/shaow_tb.gif) repeat-y left 0 ;}
+.f-cols{ width: 705px; }
+.f-header{ height:63px; overflow:hidden; }

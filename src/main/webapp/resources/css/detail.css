@@ -1,0 +1,165 @@
+.r_pro {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 718px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.pfd {
+	BORDER-BOTTOM: #a2a2a2 1px dotted; MARGIN-TOP: 5px; WIDTH: 687px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; OVERFLOW: hidden
+}
+
+.pfd .le DD {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 322px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.pfd .le DD .pro {
+	WIDTH: 324px; BACKGROUND: url(../img/index_94.gif) repeat-x; HEIGHT: 61px
+}
+.pfd .le DD .pro P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.pfd .le DD .pro P A {
+	width:73px;height:48px;BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; MARGIN-TOP: 8px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid
+}
+.pfd .le DD .pro P A.cur {
+	BORDER-BOTTOM: #82acd5 2px solid; BORDER-LEFT: #82acd5 2px solid; BORDER-TOP: #82acd5 2px solid; BORDER-RIGHT: #82acd5 2px solid
+}
+.pfd .le DD .pro .leb {
+	WIDTH: 21px; BACKGROUND: url(../img/index_95.gif) repeat-x; HEIGHT: 61px
+}
+.pfd .le DD .pro .rib {
+	WIDTH: 21px; BACKGROUND: url(../img/index_95.gif) repeat-x; HEIGHT: 61px
+}
+
+
+.pfd .le DD .pro .leb IMG {
+	MARGIN-TOP: 25px
+}
+.leb a{MARGIN: 25px 0 0 2px;width:17px; height:17px; display:block;background:url(../img/bg_not.gif) no-repeat -113px -58px;}
+.rib a{MARGIN: 25px 0 0 2px;width:17px; height:17px; display:block;background:url(../img/bg_not.gif) no-repeat -130px -58px;;}
+.pfd .le DD .pro .rib IMG {
+	MARGIN-TOP: 25px
+}
+
+.pfd .le dd p.sear{background: url(../img/bg_not.gif) no-repeat -140px -270px; padding-left: 22px;padding-right: 4px; line-height: 18px;overflow: hidden;  margin-top: 5px; text-align: left; }
+.pfd .le dd p.sear span{ font-weight: bold;}
+
+.pfd .ri {
+	WIDTH: 340px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 15px; OVERFLOW: hidden
+}
+.pfd .ri H3 {
+	TEXT-ALIGN: left; PADDING-LEFT: 4px; DISPLAY: block; FONT: bold 12px/20px arial;  COLOR: #686868
+}
+.pfd .ri .tables TH {
+	BORDER-BOTTOM: #afafaf 1px dotted; TEXT-ALIGN: left; PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: 11px/1em arial; PADDING-TOP: 4px
+}
+.pfd .ri .tables TD {
+	BORDER-BOTTOM: #afafaf 1px dotted; PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT: bold 11px/1em arial; PADDING-TOP: 4px
+}
+.pfd .ri .sub {
+	MARGIN-TOP: 10px;padding-bottom:10px; DISPLAY: inline; FLOAT: left
+}
+.pfd form{float:left;margin-right:15px;}
+.pfd .chat_now_button{border:none;background:none;font-weight:bold;line-height:26px;  cursor: pointer;}
+.pfd .chat_now_button .chat_icon{background:url(../img/bg_not.gif) no-repeat -472px -617px;display: inline-block;width: 30px; height: 26px; float: left;}
+.detail {
+	BORDER-BOTTOM: #a2a2a2 1px dotted; WIDTH: 687px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px
+}
+.detail STRONG {
+	TEXT-ALIGN: left; LINE-HEIGHT: 26px; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.detail P {
+	TEXT-ALIGN: left; LINE-HEIGHT: 20px
+}
+.detail li,.detail ul,.detail ol{ margin-left:15px;}
+.key {
+	BORDER-BOTTOM: #a2a2a2 1px dotted; TEXT-ALIGN: left; LINE-HEIGHT: 25px; WIDTH: 687px; DISPLAY: inline; FLOAT: left; MARGIN-LEFT: 10px; FONT-WEIGHT: bold
+}
+.key A {
+	MARGIN-LEFT: 5px
+}
+.send {
+	TEXT-ALIGN: left; MARGIN: 10px 0px 10px 10px; WIDTH: 687px; DISPLAY: inline; BACKGROUND: #f5f5f5; FLOAT: left; HEIGHT: 253px
+}
+.send SPAN {
+	LINE-HEIGHT: 20px; TEXT-INDENT: 8px; MARGIN: 15px 0px; WIDTH: 687px; DISPLAY: block; HEIGHT: 20px; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+.send SPAN B {
+	WIDTH: 80px; BACKGROUND: #fff; HEIGHT: 20px; FONT-SIZE: 13px
+}
+.send .le {
+	TEXT-ALIGN: center; WIDTH: 150px; DISPLAY: inline; FLOAT: left
+}
+.send .le DIV {
+	BORDER-BOTTOM: #cdcdcd 1px solid; BORDER-LEFT: #cdcdcd 1px solid; WIDTH: 104px; HEIGHT: 104px; BORDER-TOP: #cdcdcd 1px solid; BORDER-RIGHT: #cdcdcd 1px solid
+}
+.send .le P {
+	TEXT-ALIGN: center; LINE-HEIGHT: 25px; WIDTH: 150px; DISPLAY: block; MARGIN-BOTTOM: 10px; HEIGHT: 25px; OVERFLOW: hidden; FONT-WEIGHT: bold
+}
+.send .ri {
+	WIDTH: 525px; DISPLAY: inline; FLOAT: left
+}
+.send .ri TEXTAREA {
+	WIDTH: 504px; HEIGHT: 124px
+}
+.send .ri B {
+	LINE-HEIGHT: 16px; WIDTH: 504px; DISPLAY: block; MARGIN-BOTTOM: 8px; HEIGHT: 16px; COLOR: #888888; FONT-SIZE: 10px
+}
+.send .ri P {
+	TEXT-ALIGN: center; WIDTH: 525px; DISPLAY: block; HEIGHT: 25px
+}
+.send .ri P A {
+	TEXT-ALIGN: center; BORDER-LEFT: #fdc16d 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; DISPLAY: inline; BACKGROUND: url(../img/index_84-2.gif) repeat-x; FLOAT: left; HEIGHT: 24px; MARGIN-LEFT: 100px; FONT-SIZE: 13px; FONT-WEIGHT: bold; BORDER-RIGHT: #a65600 1px solid; PADDING-TOP: 0px
+}
+.send .ri P A IMG {
+	MARGIN-TOP: 7px; MARGIN-RIGHT: 5px
+}
+.cpn {
+	LINE-HEIGHT: 22px; MARGIN: 5px 0px; HEIGHT: 20px
+}
+.cpn DD {
+	LINE-HEIGHT: 28px; TEXT-INDENT: 10px; MARGIN: 0px; BACKGROUND: url(../img/index_16h.gif) repeat-x right top; HEIGHT: 28px; COLOR: #003366; FONT-WEIGHT: bold
+}
+.cpn DT {
+	TEXT-INDENT: 8px; WIDTH: 190px; DISPLAY: inline; background:url(../img/bg_not.gif) no-repeat -496px -298px; FLOAT: left; HEIGHT: 22px; MARGIN-LEFT: 10px; OVERFLOW: hidden; MARGIN-RIGHT: 20px
+}
+
+
+
+
+.detail{  width:687px; border-bottom: #A2A2A2 dotted 1px;float: left; display: inline; margin-left: 10px; font-size: 14px; font-family: arial;}
+.detail p{ text-align: left; line-height: 20px;}
+
+.key{ text-align: left; width:687px; height: 25px; font-weight: bold; line-height: 25px; border-bottom: #A2A2A2 dotted 1px;float: left; display: inline; margin-left: 10px; }
+.key a{ margin-left: 5px;}
+
+.send{ width:687px; margin:10px 0; height:253px; text-align: left; float: left; display: inline; margin-left: 10px; background:#F5F5F5;}
+.send span{ height:20px;  width:687px; display:block; line-height:20px; margin:15px 0; font-size:18px; font-weight:bold; text-indent:8px;}
+.send span b{ font-size:13px; width:80px; background:#fff; height:20px;}
+.send .le{ width:150px; text-align:center; float:left;display:inline;}
+.send .le div{width:104px; height:104px; border:#CDCDCD solid 1px; }
+.send .le p{width:150px; margin-bottom:10px;  height:25px; line-height:25px; text-align:center; display:block;  font-weight:bold;  overflow:hidden;}
+.send .ri{ width:525px;float:left;display:inline;}
+.send .ri textarea{width:504px; height:124px; }
+.send .ri b{ font-size:10px; color:#888888; width:504px; height:16px; line-height:16px;display:block; margin-bottom:8px; }
+.send .ri p{width:525px; height:25px; text-align:center; display:block;}
+.send .ri p a{height:24px; font-size:13px;  float:left; display:inline;  margin-left:100px; background:url(../img/index_84-2.gif) repeat-x; line-height:24px; font-weight:bold; text-align:center; padding:0 13px; border-left:#FDC16D solid 1px; border-right:#A65600 solid 1px; }
+.send .ri p a img{ margin-right: 5px; margin-top: 7px;}
+
+
+.cpn{ height: 20px; margin: 5px 0; line-height:22px;}
+
+.cpn dd{ margin: 0; height: 28px; line-height: 28px;color: #003366; font-weight: bold; text-indent: 10px;}
+.cpn dt{background:url(../img/bg_not.gif) no-repeat -496px -298px;display:inline;float:left;margin-left:10px;margin-right:20px;text-indent:8px;width:190px; height: 22px; overflow: hidden;}
+.pfd .le dt{ width: 312px; height: 222px; padding:6px; background:#E6E6E6; text-align:  center;}
+.pfd .le dt .carousel-pictures{ width:308px; padding-left:8px; text-align:left; float:left; display:inline;}
+.pfd .le dt .carousel-pictures div{ margin-left:4px; border:#dcdcdc solid 4px;width:308px; height:220px;display:table-cell;vertical-align:middle;text-align:center;*font-size:225px;*display:block;}
+.pfd .le dt img{vertical-align:middle;}
+
+
+.blk_18 {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #ACCAF8;
+    font-size: 9pt;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.contact_now{width:129px;height:24px;border:none;cursor:pointer; background:url(../img/contactNow.jpg) no-repeat;}
+.close_thickbox{width:26px;height:26px;border:none;cursor:pointer; margin-right: 20px;background:url(../img/close_thickbox.jpg) no-repeat; background-size:26px,26px;}
